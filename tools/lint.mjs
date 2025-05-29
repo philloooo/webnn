@@ -597,7 +597,7 @@ for (const algorithm of root.querySelectorAll(
     // Look for links to "#constraints-..."
     for (const href of algorithm.querySelectorAll('a')
            .map(a => a.getAttribute('href'))
-           .filter(href => href.match(/#constraints-/))) {
+           .filter(href => href ? href.match(/#constraints-/) : '')) {
       // Allow either exact case or lowercase match for table ID.
       if (
         href !== '#constraints-' + method &&
